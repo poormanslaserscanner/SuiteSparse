@@ -261,6 +261,7 @@ if ( SUITESPARSE_CUDA )
     # be part of the SPQR project?
     target_link_libraries ( SPQR PRIVATE
         SuiteSparse::GPUQREngine SuiteSparse::GPURuntime )
+    target_include_directories(SPQR PRIVATE "../GPUQREngine/Include")
     target_compile_definitions ( SPQR PUBLIC "SUITESPARSE_CUDA" )
     set ( SPQR_CFLAGS "-DSUITESPARSE_CUDA" )
     if ( NOT NSTATIC )
@@ -277,6 +278,8 @@ if ( SUITESPARSE_CUDA )
         else ( )
             target_link_libraries ( SPQR_static PUBLIC SuiteSparse::GPUQREngine )
         endif ( )
+        target_include_directories(SPQR_static PRIVATE "../GPUQREngine/Include")
+
         if ( TARGET SuiteSparse::GPURuntime_static )
             target_link_libraries ( SPQR_static PUBLIC SuiteSparse::GPURuntime_static )
         else ( )

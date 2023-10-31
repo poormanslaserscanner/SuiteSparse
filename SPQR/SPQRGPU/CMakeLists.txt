@@ -56,7 +56,7 @@ if ( NOT NSTATIC )
     endif ( )
 endif ( )
 
-set ( SPQR_CUDA_INCLUDES ../Include )
+set ( SPQR_CUDA_INCLUDES "../Include;../../GPUQREngine/Include" )
 
 if ( TARGET SuiteSparse::GPUQREngine )
     target_include_directories ( SPQR_CUDA PRIVATE

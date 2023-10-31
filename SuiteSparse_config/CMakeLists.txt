@@ -27,10 +27,11 @@ message ( STATUS "Building SuiteSparse_config version: v"
 #-------------------------------------------------------------------------------
 # SuiteSparse policies
 #-------------------------------------------------------------------------------
+message("CMAKE_MODULE_PATH: '${CMAKE_MODULE_PATH}'")
 
 set ( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
     ${CMAKE_SOURCE_DIR}/cmake_modules )
-
+message("CMAKE_MODULE_PATH: '${CMAKE_MODULE_PATH}'")
 include ( SuiteSparsePolicy )
 
 if ( NOT NFORTRAN )
